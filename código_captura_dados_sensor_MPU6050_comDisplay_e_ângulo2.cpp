@@ -137,23 +137,23 @@ void loop() {
    //Definindo o 1°quadrante
   if((ax > 0) & (ay > 0)){
       //Serial.println("1° Quadrante");
-      ay_graus = ay_graus;
+      ay_graus = 90 - ay_graus;
   }
   //Definindo o 2°quadrante
-  if((ax > 0) & (ay < 0)){
-      //Serial.println("2° Quadrante");
-      ay_graus = ay_graus;
+  if((ax < 0) & (ay < 0)){
+      //Serial.println("4° Quadrante");
+      ay_graus = 90 - ay_graus * (-1);
   }
   //Definindo o 3°quadrante
   if((ax < 0) & (ay > 0)){
       //Serial.println("3° Quadrante");
-      ay_graus = ay_graus * (-1)+360;
+      ay_graus = 90 - ay_graus * (-1);
   }
   //Definindo o 4°quadrante
-  if((ax < 0) & (ay < 0)){
-      //Serial.println("4° Quadrante");
-      ay_graus = ay_graus * (-1)+360;
-  }
+  if((ax > 0) & (ay < 0)){
+      //Serial.println("2° Quadrante");
+      ay_graus = 450 - ay_graus;
+  } 
 
   
   /* Print out the values */
